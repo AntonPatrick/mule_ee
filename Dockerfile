@@ -15,9 +15,11 @@ ENV MULE_HOME /opt/mule
 
 #https://s3-eu-west-1.amazonaws.com/mule-ee-3.8.5/mule-ee-distribution-standalone-3.8.5.tar.gz
 
-RUN cd ~ && wget https://s3-eu-west-1.amazonaws.com/mule-ee-3.8.5/mule-ee-distribution-standalone-3.8.5.tar.gz
+RUN cd /opt && wget https://s3-eu-west-1.amazonaws.com/mule-ee-3.8.5/mule-ee-distribution-standalone-3.8.5.tar.gz && \
 
-RUN cd /opt && tar xvzf ~/mule-standalone-3.8.0.tar.gz && rm ~/mule-standalone-3.8.0.tar.gz && ln -s /opt/mule-standalone-3.8.0 /opt/mule
+	tar xvzf /opt/mule-ee-distribution-standalone-3.8.5.tar.gz && \
+	rm /opt/mule-ee-distribution-standalone-3.8.5.tar.gz && \
+	mv mule-enterprise-standalone-3.8.5 mule
 
 
 #ADD mule-ee-distribution-standalone-3.8.5.tar.gz /opt
