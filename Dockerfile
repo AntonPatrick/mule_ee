@@ -13,9 +13,16 @@ ENV MULE_HOME /opt/mule
 	#cd /opt && \
 	#addgroup mule && adduser -G mule -g "MuleESB User" -s /bin/sh -D mule
 
-ADD mule-ee-distribution-standalone-3.8.5.tar.gz /opt
+#https://s3-eu-west-1.amazonaws.com/mule-ee-3.8.5/mule-ee-distribution-standalone-3.8.5.tar.gz
 
-RUN	cd /opt && mv mule-enterprise-standalone-3.8.5 mule
+RUN cd ~ && wget https://s3-eu-west-1.amazonaws.com/mule-ee-3.8.5/mule-ee-distribution-standalone-3.8.5.tar.gz
+
+RUN cd /opt && tar xvzf ~/mule-standalone-3.8.0.tar.gz && rm ~/mule-standalone-3.8.0.tar.gz && ln -s /opt/mule-standalone-3.8.0 /opt/mule
+
+
+#ADD mule-ee-distribution-standalone-3.8.5.tar.gz /opt
+
+#RUN	cd /opt && mv mule-enterprise-standalone-3.8.5 mule
 
 #RUN chown -R mule:mule /opt/mule && \
 	#ls -ltr /opt/mule/
@@ -24,7 +31,7 @@ RUN	cd /opt && mv mule-enterprise-standalone-3.8.5 mule
 VOLUME /opt/mule/logs /opt/mule/apps /opt/mule/domains /opt/mule/conf
 
 # Default http port
-EXPOSE 8082 8092 5000 1098 7777 9997
+EXPOSE 8081 8090 5000 1098 7777 9997
 
 
 WORKDIR /opt/mule
