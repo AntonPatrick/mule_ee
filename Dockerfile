@@ -43,4 +43,4 @@ WORKDIR /opt/mule
 # Default when starting the container is to start Mule ESB.
 CMD ["/opt/mule/bin/mule"]
 
-#docker run -d --name="mule_ee_01" -p 8090:8090 -v ~/Documents/Kitematic/mule_ee_01/apps:/opt/mule/apps -v ~/Documents/Kitematic/mule_ee_01/logs:/opt/mule/logs -v ~/Documents/Kitematic/mule_ee_01/logs:/opt/mule/conf mule_ee:3.9.0
+#docker run -d --name="mule_ee" -p 8090:8090 -v ~/Documents/docker/volumes/mule_ee/apps:/opt/mule/apps -v ~/Documents/docker/volumes/mule_ee/logs:/opt/mule/logs -d docker pull antonpatrick/mule_ee:latest
