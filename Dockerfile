@@ -9,14 +9,16 @@ ENV MULE_HOME /opt/mule
 #    apk --no-cache upgrade && \
 #    apk --no-cache add tzdata openntpd && \
 
-    #mkdir -p /opt && \
+  #mkdir -p /opt && \
 	#cd /opt && \
 	#addgroup mule && adduser -G mule -g "MuleESB User" -s /bin/sh -D mule
 
 #https://s3-eu-west-1.amazonaws.com/mule-ee-3.9.0/mule-ee-distribution-standalone-3.9.0.tar.gz
+#RUN cd /opt
+#ADD mule-ee-distribution-standalone-3.9.0.tar.gz /opt
 
-RUN cd /opt && wget https://s3-eu-west-1.amazonaws.com/mule-ee-3.9.0/mule-ee-distribution-standalone-3.9.0.tar.gz && \
-
+RUN cd /opt && \
+	wget https://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standalone-3.9.0.tar.gz && \
 	tar xvzf /opt/mule-ee-distribution-standalone-3.9.0.tar.gz && \
 	rm /opt/mule-ee-distribution-standalone-3.9.0.tar.gz && \
 	mv mule-enterprise-standalone-3.9.0 mule
