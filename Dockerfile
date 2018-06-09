@@ -13,20 +13,20 @@ ENV MULE_HOME /opt/mule
 	#cd /opt && \
 	#addgroup mule && adduser -G mule -g "MuleESB User" -s /bin/sh -D mule
 
-#https://s3-eu-west-1.amazonaws.com/mule-ee-3.9.0/mule-ee-distribution-standalone-3.9.0.tar.gz
+#https://s3-eu-west-1.amazonaws.com/mule-ee-3.9.1/mule-ee-distribution-standalone-3.9.1.tar.gz
 #RUN cd /opt
-#ADD mule-ee-distribution-standalone-3.9.0.tar.gz /opt
+#ADD mule-ee-distribution-standalone-3.9.1.tar.gz /opt
 
 RUN cd /opt && \
-	wget https://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standalone-3.9.0.tar.gz && \
-	tar xvzf /opt/mule-ee-distribution-standalone-3.9.0.tar.gz && \
-	rm /opt/mule-ee-distribution-standalone-3.9.0.tar.gz && \
-	mv mule-enterprise-standalone-3.9.0 mule
+	wget https://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standalone-3.9.1.tar.gz && \
+	tar xvzf /opt/mule-ee-distribution-standalone-3.9.1.tar.gz && \
+	rm /opt/mule-ee-distribution-standalone-3.9.1.tar.gz && \
+	mv mule-enterprise-standalone-3.9.1 mule
 
 
-#ADD mule-ee-distribution-standalone-3.9.0.tar.gz /opt
+#ADD mule-ee-distribution-standalone-3.9.1.tar.gz /opt
 
-#RUN	cd /opt && mv mule-enterprise-standalone-3.9.0 mule
+#RUN	cd /opt && mv mule-enterprise-standalone-3.9.1 mule
 
 #RUN chown -R mule:mule /opt/mule && \
 	#ls -ltr /opt/mule/
